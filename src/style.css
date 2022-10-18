@@ -1,0 +1,18 @@
+body {
+    background: rgb(174, 174, 245);
+}
+
+.weather-app-body {
+    width: 350px;
+    height: 350px;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+}
+
+.weather-app-body > div{
+    margin-bottom: 30px;
+}

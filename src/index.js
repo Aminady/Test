@@ -63,7 +63,8 @@ function getSunsetAndSunriseTime(input) {
 
 async function requestWeatherAPI(input) {
 
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=dakar&appid=bf6a7f8b83a17833aa9772415f2e3e57`)
+    let ask = prompt("City, Country ?")
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ask}&appid=bf6a7f8b83a17833aa9772415f2e3e57`)
     const weatherData = await response.json();
     try { 
         country.textContent = weatherData.name + ", " + weatherData.sys.country;
