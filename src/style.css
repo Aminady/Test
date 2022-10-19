@@ -1,5 +1,27 @@
+:root {
+    --border-btn: 2px solid white;;
+    --color-bg: rgb(174, 174, 245);
+    --color-div-text: white;
+    --color-icon: white;
+  }
+  
+  :root.light {
+      --border-btn: 2px solid white;;
+      --color-bg: rgb(174, 174, 245);
+      --color-div-text: white;
+      --color-icon: white;
+  }
+  
+  :root.dark {
+        --border-btn: 2px solid rgb(64, 67, 80);;
+        --color-bg :  #102b47;
+        --color-div-text: rgb(95, 131, 155);
+        --color-icon: rgb(95, 131, 155);
+  
+      }
+
 body {
-    background: rgb(174, 174, 245);
+    background: var(--color-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,11 +30,11 @@ body {
 .weather-app-body {
     width: 350px;
     height: 350px;
-    border: 2px solid white;
+    border: var(--border-btn);
     border-radius: 5px;
     text-align: center;
     font-size: 24px;
-    color: white;
+    color: var(--color-div-text);
     padding: 10px;
     margin-bottom: 50px;
 }
@@ -22,7 +44,7 @@ body {
 }
 
 .error-icon {
-    fill: white;
+    fill: var(--color-icon);
     width: 200px;
     height: 200px;
 }
@@ -58,8 +80,8 @@ input[type = "text"] {
     justify-content: space-around;
 }
 
-.localisation, .dark-mode {
-    fill: white;
+.localisation, .git, .dark-mode {
+    fill: var(--color-icon);
     width: 30px;
     height: 30px;
     cursor: pointer;

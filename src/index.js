@@ -1,5 +1,10 @@
 import './style.css';
 
+function setTheme() {
+    const root = document.documentElement;
+      const newTheme = root.className === 'dark' ? 'light' : 'dark';
+      root.className = newTheme;
+};
 
 // async function requestWeatherAPI(input) {
 //     const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m`, {mode: 'cors'})
@@ -119,6 +124,7 @@ async function requestLocalisation() {
 let localize = document.querySelector('.localisation');
 let userInput = document.querySelector('#search');
 let search = document.querySelector('.loupe');
+let themeChange = document.querySelector('.dark-mode');
 
 search.addEventListener('click', () => {
     requestWeatherAPI(userInput.value);
@@ -127,3 +133,5 @@ search.addEventListener('click', () => {
 document.body.onload = requestLocalisation();
 
 localize.addEventListener('click', requestLocalisation );
+
+themeChange.addEventListener('click', setTheme)
