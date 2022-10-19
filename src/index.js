@@ -128,5 +128,4 @@ document.body.onload = requestLocalisation();
 
 localize.addEventListener('click', (e) => {
     console.log(e.target);
-    // requestLocalisation();
 });
