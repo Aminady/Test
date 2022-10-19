@@ -25,7 +25,7 @@ const weatherAppBody = document.createElement('div');
 weatherAppBody.className = 'weather-app-body';
 document.body.appendChild(weatherAppBody);
 weatherAppBody.innerHTML = `        
-<div class="localisation">
+<div class="country-localisation">
     <p class="country"></p>
 </div>
 
@@ -126,6 +126,4 @@ search.addEventListener('click', () => {
 
 document.body.onload = requestLocalisation();
 
-localize.addEventListener('click', (e) => {
-    console.log(e.target);
-});
+localize.addEventListener('click', requestLocalisation );
