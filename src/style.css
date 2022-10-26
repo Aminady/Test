@@ -45,6 +45,7 @@
 }
 
 #add-svg {
+    border: 3px solid black;
     cursor: pointer;
     width: 25px;
     transition: transform linear 100ms;

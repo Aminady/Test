@@ -1,5 +1,5 @@
 import './style.css';
-import {injectProjects, injectTasks} from './createDOMElement';
+import {injectProjects, injectTasks, createTaskModal, submitTasksModal} from './createDOMElement';
 
 function setTheme() {
     const root = document.documentElement;
@@ -49,5 +49,20 @@ dateParser()
 
 
     document.body.onload = injectTasks();
+
+    let sideNavTaskBtn = document.querySelector('.tasks');
+    let sideNavProjectBtn = document.querySelector('.projects');
+    sideNavTaskBtn.addEventListener('click', () => {  injectTasks();})
+    sideNavProjectBtn.addEventListener('click', () => {  injectProjects();})
+
+    let NewTaskModal = document.querySelector('#add-svg')
+    NewTaskModal.addEventListener('click', () => {
+      createTaskModal();
+      let submitTasks = document.querySelector('.submit-task');
+      submitTasks.addEventListener('click', () => {
+        submitTasksModal();
+      })
+    })
+
 
 export {mainContainer, tasksProjectsContainer, dateParser}
