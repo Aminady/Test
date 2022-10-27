@@ -9,6 +9,7 @@
 
 * {
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Barlow', 'CooperHewittThin', sans-serif;
 }
 
@@ -18,10 +19,6 @@
     width: 100%;
     background-color: black;
     color: white;
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
-    align-items: center;
-    justify-items: start;
 }
 
 .add-profile {
@@ -31,21 +28,8 @@
     justify-items: end;
 }
 
-.search-bar {
-    position: relative;
-}
-
-#search-svg {
-    position: absolute;
-    right: 5px;
-    bottom: 2px;
-    cursor: pointer;
-    font-size: 20px;
-    color: black;
-}
 
 #add-svg {
-    border: 3px solid black;
     cursor: pointer;
     width: 25px;
     transition: transform linear 100ms;
@@ -209,14 +193,17 @@ input[type="checkbox"]:focus {
     height: 300px;
     display: grid;
     grid-template-rows: 2fr 1fr;
-    justify-items: center;
+    justify-items: start;
     align-items: end;
-    justify-content: start;
     box-shadow: 1px 5px 8px rgba(145, 144, 144, 0.589);
 }
 
 .dash-title {
     align-self: center;
+}
+
+.dash-btns {
+    width: 100%;
 }
 
 .tasks, .projects {
@@ -277,12 +264,12 @@ input[type="checkbox"]:focus {
     height: 300px;
     width: 300px;
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     font-size: 20px;
     padding: 10px;
     background: white;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     justify-items: center;
 }
 
