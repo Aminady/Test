@@ -74,6 +74,11 @@ function createTaskModal(){
 
 }
 
+function newModal (name, date, type) {
+    this.name = name;
+    this.date = date;
+    this.type = type
+};
 function submitTasksModal() {
   const modal = document.querySelector('.modal');
   
@@ -81,11 +86,6 @@ function submitTasksModal() {
   const tasksOrProjects = document.querySelector('#tasks-or-projects');
   const dateInput = document.querySelector('#date');
   const tasksName = document.querySelector('#tasks-name');
-  function newModal (name, date, type) {
-      this.name = name;
-      this.date = date;
-      this.type = type
-  };
   
   submitModal.addEventListener('click', () => {
       let tasksArray = [];

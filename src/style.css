@@ -217,12 +217,6 @@ input[type="checkbox"]:focus {
     animation-fill-mode: both;
 
 }
-/* p:hover {
-    animation-name: dash;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
-
-} */
 
 @keyframes dash {
     0%{}

@@ -57,12 +57,7 @@ dateParser()
 
     let NewTaskModal = document.querySelector('#add-svg')
     NewTaskModal.addEventListener('click', () => {
-      createTaskModal();
-      let submitTasks = document.querySelector('.submit-task');
-      submitTasks.addEventListener('click', () => {
-        submitTasksModal();
-      })
+      createTaskModal()
     })
 
-
-export {mainContainer, tasksProjectsContainer, dateParser}
+    export {mainContainer, tasksProjectsContainer, dateParser}
