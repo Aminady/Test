@@ -55,9 +55,19 @@ dateParser()
     sideNavTaskBtn.addEventListener('click', () => {  injectTasks();})
     sideNavProjectBtn.addEventListener('click', () => {  injectProjects();})
 
-    let NewTaskModal = document.querySelector('#add-svg')
-    NewTaskModal.addEventListener('click', () => {
-      createTaskModal()
+    // let NewTaskModal = document.querySelector('#add-svg')
+    // NewTaskModal.addEventListener('click', () => {
+    //   createTaskModal()
+    // })
+    
+    document.body.addEventListener('click', (e) => {
+      console.log(e);
+      if(e.target.id == 'add-svg') {
+        createTaskModal()
+        console.log('add');
+      } else if(e.target.className == "submit-task"){
+        submitTasksModal()
+        console.log('submit');
+      }
     })
-
     export {mainContainer, tasksProjectsContainer, dateParser}
