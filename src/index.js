@@ -68,6 +68,9 @@ dateParser()
       } else if(e.target.className == "submit-task"){
         submitTasksModal()
         console.log('submit');
+      } else if(e.target.className.baseVal == "trash-svg") {
+        e.target.parentElement.parentElement.remove()
+        console.log("TRASH");
       }
     })
     export {mainContainer, tasksProjectsContainer, dateParser}
