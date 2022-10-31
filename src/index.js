@@ -62,7 +62,7 @@ dateParser()
     
     document.body.addEventListener('click', (e) => {
       console.log(e);
-      if(e.target.id == 'add-svg') {
+      if(e.target.id == 'add-svg' || e.target.className.baseVal == 'add-svg') {
         createTaskModal()
         console.log('add');
       } else if(e.target.className == "submit-task"){
