@@ -1,5 +1,5 @@
 import './style.css';
-import {injectProjects, injectTasks, createTaskModal, submitTasksModal} from './createDOMElement';
+import {injectProjects, injectTasks, createTaskModal, createProjectModal , submitTasksModal, submitProjectModal} from './createDOMElement';
 
 function setTheme() {
     const root = document.documentElement;
@@ -64,13 +64,14 @@ dateParser()
       console.log(e);
       if(e.target.id == 'add-svg' || e.target.className.baseVal == 'add-svg') {
         createTaskModal()
-        console.log('add');
       } else if(e.target.className == "submit-task"){
         submitTasksModal()
-        console.log('submit');
       } else if(e.target.className.baseVal == "trash-svg") {
         e.target.parentElement.parentElement.remove()
-        console.log("TRASH");
+      } else if(e.target.className.baseVal == "add-projects") {
+        createProjectModal()
+      } else if(e.target.className == "submit-project") {
+        submitProjectModal()
       }
     })
     export {mainContainer, tasksProjectsContainer, dateParser}

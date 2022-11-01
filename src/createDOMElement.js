@@ -1,6 +1,7 @@
 import { mainContainer, tasksProjectsContainer, dateParser} from ".";
 
 let date = new Date();
+var modal = document.querySelector('.modal');
 
 function injectTasks () {
     return tasksProjectsContainer.innerHTML = `
@@ -30,7 +31,7 @@ function injectProjects() {
   return tasksProjectsContainer.innerHTML = `
     <div class="project-header">
     <h1>Projects</h1>
-    <svg id="add-projects" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+    <svg id="add-projects" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path class="add-projects" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
     </div>
     
     <div class="emptyProjects">
@@ -66,13 +67,45 @@ function createTaskModal(){
       // </select>
       // </div>
       
-  const modal = document.querySelector('.modal');
+  var modal = document.querySelector('.modal');
 
   modal.addEventListener("click", () => {
       modal.parentNode.remove();
   });
 
 }
+
+function createProjectModal() {
+  const projectsModalContainer = document.createElement('div') 
+  document.body.appendChild(projectsModalContainer)
+  projectsModalContainer.classList = "projects-modal-container";
+
+  projectsModalContainer.innerHTML = `
+        <div class="modal"></div>
+        <form class="project-form" action="" method="get">
+        <div class="input-container">
+        <input type="text" name="title-name" id="title-name" placeholder="Project Title" required>
+        </div>
+        
+        <div class="input-container">
+        <input type="text" name="tasks-name" id="tasks-name" placeholder="Add a task to your project" required>
+        </div>
+
+        <div class="input-container">
+        <input type="date" name="date" id="date">
+        </div>
+    
+        <button type="button" class="submit-project">Add this project</button>
+        </form>
+        `
+        const modal = document.querySelector('.modal');
+
+        modal.addEventListener("click", () => {
+            modal.parentNode.remove();
+        });
+  
+}
+
 
 function newModal (name, date, type) {
     this.name = name;
@@ -100,5 +133,37 @@ function submitTasksModal() {
           `      
 }
 
+function submitProjectModal() {
+
+  const titleName = document.querySelector('#title-name');
+  const taskName = document.querySelector('#tasks-name');
+  const dateInput = document.querySelector('#date');
+  const emptyProjects = document.querySelector('.emptyProjects');
+
   
-  export {injectProjects, injectTasks, createTaskModal, submitTasksModal};
+      let projectsArray = [];
+      projectsArray.push(new newModal(titleName.value, taskName.value, dateInput.value));
+      emptyProjects.remove();
+
+      tasksProjectsContainer.innerHTML += 
+  ` 
+      <div class="tasksInProjectstitle">
+      <h3 class="h3">${titleName.value}</h3>
+      <svg class="trash-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+      </div>
+      <div class="tasks-checkbox"> 
+      <label for="done">${taskName.value}</label>
+      <label for="done">${dateParser(dateInput.value)}</label>
+      <input type="checkbox" name="tasks" id="done">
+      <svg class="trash-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+      </div>
+  `
+  // modal.parentNode.remove();
+
+//   modal.addEventListener("click", () => {
+//     modal.parentNode.remove();
+// });
+};
+
+  
+  export {injectProjects, injectTasks, createTaskModal, createProjectModal, submitTasksModal, submitProjectModal};
