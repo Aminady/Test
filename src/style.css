@@ -55,21 +55,36 @@
     transition: transform linear 100ms;
 }
 
-.trash-svg {
+.trash-svg, .trash-project {
     cursor: pointer;
     width: 15px;
     height: 15px;
     grid-column: 4;
 }
 
-.trash-svg:hover {
+.trash-svg:hover, .trash-project:hover {
     fill: red;
+}
+
+.add-delete-project {
+    width: 50px;
+    display: flex;
+    gap: 10px;
+}
+
+.add-subtask {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+.add-subtask:hover {
+    fill: blue;
 }
 
 #profile-svg:hover {
     transform: scale(1.2);
 }
-
 
 #search {
     width: 400px;
