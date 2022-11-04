@@ -72,6 +72,9 @@ dateParser()
         createProjectModal()
       } else if(e.target.className == "submit-project") {
         submitProjectModal()
+      } else if(e.target.className == "trash-project" || e.target.className.baseVal == "trash-project") {
+        e.target.parentElement.parentElement.parentElement.remove();
+
       }
     })
     export {mainContainer, tasksProjectsContainer, dateParser}
