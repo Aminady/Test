@@ -66,14 +66,6 @@ function createTaskModal(){
       <button type="button" class="submit-task">Add to your list</button>
       </form>
       `
-      // <div>
-      // <select name="tasks-or-projects" id="tasks-or-projects">
-      //     <option value="tasks-or-projects">Task or Project ?</option>
-      //     <option value="tasks-option">My Tasks</option>
-      //     <option value="projects-option">My Projects</option>
-      // </select>
-      // </div>
-  // removeModal();
 }
 
 function createProjectModal() {
@@ -142,13 +134,7 @@ function submitProjectModal() {
   
   projectsArray.push(new newModal(titleName.value, taskName.value, dateInput.value));
   emptyProjects.remove();
-  // modalContainer.remove()
   modal.parentNode.remove();
-  // if(emptyProjects) {
-  //   return emptyProjects.remove()
-  // } else if(emptyProjects == null) {
-  //   return
-  // }
 
       tasksProjectsContainer.innerHTML += 
   ` 

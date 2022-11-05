@@ -54,11 +54,6 @@ dateParser()
     let sideNavProjectBtn = document.querySelector('.projects');
     sideNavTaskBtn.addEventListener('click', () => {  injectTasks();})
     sideNavProjectBtn.addEventListener('click', () => {  injectProjects();})
-
-    // let NewTaskModal = document.querySelector('#add-svg')
-    // NewTaskModal.addEventListener('click', () => {
-    //   createTaskModal()
-    // })
     
     document.body.addEventListener('click', (e) => {
       console.log(e);

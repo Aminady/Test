@@ -47,14 +47,6 @@
     
 }
 
-#profile-svg {
-    cursor: pointer;
-    width: 25px;
-    background: white;
-    border: 2px solid white;
-    transition: transform linear 100ms;
-}
-
 .trash-svg, .trash-project {
     cursor: pointer;
     width: 15px;
@@ -82,18 +74,6 @@
     fill: blue;
 }
 
-#profile-svg:hover {
-    transform: scale(1.2);
-}
-
-#search {
-    width: 400px;
-    height: 25px;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-}
 
 .add-btn {
     font-size: 30px;
@@ -129,6 +109,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     margin-bottom: 10px;
+    padding-left: 10px;
 }
 
 .tasks-checkbox:hover {
